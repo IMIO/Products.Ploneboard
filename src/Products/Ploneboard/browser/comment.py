@@ -127,7 +127,7 @@ class ConversationView(CommentView):
         if type(batchStart) == type('a'):
             batchStart = int(batchStart.split('#')[0])
         numComments = conv.getNumberOfComments()
-        return Batch(self._getComments, numComments, batchSize, batchStart, orphan=1)
+        return Batch(self._getComments, numComments, batchSize, batchStart, orphan=0)
 
     def root_comments(self):
         rootcomments = self.context.getRootComments()
